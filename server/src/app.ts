@@ -1,9 +1,9 @@
-const express = require("express");
-const { createServer } = require("http");
-const { Server } = require("socket.io");
-const cors = require("cors");
-const logger = require("morgan");
-const { routes } = require("./routes");
+import express from "express";
+import { createServer } from "http";
+import { Server } from "socket.io";
+import cors from "cors";
+import logger from "morgan";
+import { routes } from "./routes";
 
 const app = express();
 
@@ -23,4 +23,4 @@ io.on("new_message", (socket) => {
   console.log(socket);
 });
 
-module.exports = { httpServer, io };
+export { httpServer, io };
