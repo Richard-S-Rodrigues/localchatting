@@ -1,7 +1,7 @@
 import { io } from "../app";
 
 class SendMessageService {
-  async execute(text) {
+  async execute(text: string) {
     io.emit("new_message", { text });
 
     return text;
